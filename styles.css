@@ -1,0 +1,33 @@
+* {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+
+.pokedex-list {
+  display: grid;
+  grid-gap: 1rem;
+  padding: 2em;
+}
+
+.pokedex-list li {
+  text-transform: capitalize;
+  border: solid 1px;
+  border-color: lightgrey;
+  border-radius: 0.5em;
+  color: rgb(100, 100, 100);
+}
+
+.pokedex-list li:hover {
+  background-color: rgba(243, 119, 3, 0.705);
+  border-color: rgb(110, 105, 105);
+  opacity: 0.7;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+@media screen and (min-width: 480px) {
+  .pokedex-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
