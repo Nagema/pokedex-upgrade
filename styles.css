@@ -4,13 +4,13 @@
   padding: 0;
 }
 
-.pokedex-list {
+#pokedex {
   display: grid;
   grid-gap: 1rem;
-  padding: 2em;
+  margin: 0 7em;
 }
 
-.pokedex-list li {
+#pokedex li {
   text-transform: capitalize;
   border: solid 1px;
   border-color: lightgrey;
@@ -18,7 +18,7 @@
   color: rgb(100, 100, 100);
 }
 
-.pokedex-list li:hover {
+#pokedex li:hover {
   background-color: rgba(243, 119, 3, 0.705);
   border-color: rgb(110, 105, 105);
   opacity: 0.7;
@@ -26,8 +26,9 @@
   cursor: pointer;
 }
 
-@media screen and (min-width: 480px) {
-  .pokedex-list {
+@media screen and (min-width: 531px) {
+  #pokedex {
     grid-template-columns: repeat(3, 1fr);
+    margin: 0 12em;
   }
 }
