@@ -4,6 +4,9 @@
   padding: 0;
 }
 
+body {
+  background-color: #fff7dc73;
+}
 #pokedex {
   display: grid;
   grid-gap: 1rem;
@@ -11,18 +14,18 @@
 }
 
 #pokedex li {
+  background-color: #20c4a3a1;
   text-transform: capitalize;
   border: solid 1px;
-  border-color: lightgrey;
+  border-color: rgb(110, 105, 105);
   border-radius: 0.5em;
   color: rgb(100, 100, 100);
 }
 
 #pokedex li:hover {
-  background-color: rgba(243, 119, 3, 0.705);
-  border-color: rgb(110, 105, 105);
+  background-color: #ffee52;
+  color: rgb(0, 0, 0);
   opacity: 0.7;
-  color: rgb(255, 255, 255);
   cursor: pointer;
 }
 
