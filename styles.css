@@ -49,13 +49,13 @@ html {
   justify-content: center;
 }
 
-.pokedex li {
+.pokedex-box {
   background-color: #20c4a3a1;
   padding: 5px;
   width: 20vh;
   min-width: 200px;
   min-height: 200px;
-  height: 15vh;
+  height: 25vh;
   margin: 10px;
   line-height: 5.5vmax;
   color: white;
@@ -64,16 +64,36 @@ html {
   border-radius: 0.2em;
 }
 
-.pokedex li h2 {
+.pokedex-box h2 {
   text-transform: capitalize;
 }
-.pokedex li img {
+
+.pokedex-box img {
+  cursor: pointer;
+  max-width: 90px;
+  z-index: 9;
+}
+
+.pokedex-box:hover {
+  background-color: rgb(236, 194, 8);
+  opacity: 0.7;
   cursor: pointer;
 }
 
-.pokedex li:hover {
-  background-color: #ffee52c7;
-  color: rgb(0, 0, 0);
-  opacity: 0.7;
-  cursor: pointer;
+.pokemon-badge-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.pokemon-badge-list li {
+  border: solid;
+  border-width: 1px;
+  border-radius: 3px;
+  width: fit-content;
+  min-width: 60px;
+  height: 20px;
+  line-height: 1.5;
+  font-size: 12px;
+  padding: 5px;
 }
