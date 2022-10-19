@@ -55,7 +55,7 @@ const setPokemonFilter = (pokemons) => {
   pokemonSearch.addEventListener("keyup", (e) => {
     let searchText = e.target.value;
     const filteredPokemons = pokemons.filter((poke) => {
-      return poke.name.includes(searchText);
+      return poke.name.includes(searchText.toLowerCase());
     });
     showPokemonsList(filteredPokemons);
   });
