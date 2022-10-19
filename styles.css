@@ -12,6 +12,12 @@ html {
 .container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+}
+
+.pokemon-image-title {
+  width: 80%;
+  margin: auto;
 }
 
 .input-search {
@@ -50,7 +56,7 @@ html {
 }
 
 .pokedex-box {
-  background-color: #20c4a3a1;
+  background-color: #92dfcc;
   padding: 5px;
   width: 20vh;
   min-width: 200px;
@@ -61,6 +67,7 @@ html {
   font-weight: bold;
   text-align: center;
   border-radius: 0.2em;
+  box-shadow: 0 4px 10px 0 rgba(68, 63, 63, 0.541);
 }
 
 .pokedex-box h2 {
@@ -74,8 +81,7 @@ html {
 }
 
 .pokedex-box:hover {
-  background-color: rgb(236, 194, 8);
-  opacity: 0.7;
+  background-color: #ffcb06;
   cursor: pointer;
 }
 
