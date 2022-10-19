@@ -109,8 +109,6 @@ html {
 }
 
 .pokemon-badge-list li {
-  border: solid;
-  border-width: 1px;
   border-radius: 3px;
   width: fit-content;
   min-width: 60px;
