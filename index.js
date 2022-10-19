@@ -85,6 +85,8 @@ const filterTypes = (pokemons) => {
       });
 
       for (const color of colours) {
+        pokeType.style.border = "solid";
+        pokeType.style.borderColor = color[element.type.name];
         pokeType.style.background = color[element.type.name];
       }
     }

@@ -130,6 +130,7 @@ html {
   width: 30px;
   height: 30px;
   margin: 5px;
+  content: url("./assets/images/pokebola.png");
   cursor: pointer;
 }
 .pokemon-type:hover {
@@ -138,5 +139,5 @@ html {
   box-shadow: 0 4px 10px 0 rgba(68, 63, 63, 0.541);
 }
 .pokemon-type:active {
-  content: url("./assets/images/pokebola.png");
+  box-shadow: 0 6px 15px 0 rgba(68, 63, 63, 0.541);
 }
