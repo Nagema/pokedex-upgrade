@@ -21,9 +21,8 @@ html {
   padding-top: 10%;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 470px) {
   .pokemon-image-title {
-    width: 25%;
     padding-top: 5%;
   }
 }
@@ -122,6 +121,7 @@ html {
 .type-list {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .pokemon-type {

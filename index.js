@@ -36,7 +36,7 @@ container.appendChild(pokemonSearch);
 container.appendChild(typeList);
 container.appendChild(pokemonsList);
 
-const pokemons = fetch("https://pokeapi.co/api/v2/pokemon/")
+const pokemons = fetch("https://pokeapi.co/api/v2/pokemon?limit=40")
   .then((response) => response.json())
   .then((data) => {
     const promises = data.results.map(async (pokeItem) => {
@@ -73,13 +73,12 @@ const filterTypes = (pokemons) => {
       pokeType.className = "pokemon-type";
       pokeType.id = element.type.name;
       typeList.appendChild(pokeType);
+
       pokeType.addEventListener("click", function (e) {
         const filterByType = pokemons.filter((pokeType) => {
-          let pokeTypeElement = "";
           for (const types of pokeType.types) {
-            pokeTypeElement = types.type;
+            return types.type.name.includes(e.target.id);
           }
-          return pokeTypeElement.name.includes(e.target.id);
         });
         showPokemonsList(filterByType);
       });
