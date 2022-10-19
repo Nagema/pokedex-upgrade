@@ -18,6 +18,14 @@ html {
 .pokemon-image-title {
   width: 80%;
   margin: auto;
+  padding-top: 10%;
+}
+
+@media (min-width: 600px) {
+  .pokemon-image-title {
+    width: 25%;
+    padding-top: 5%;
+  }
 }
 
 .input-search {
@@ -36,7 +44,7 @@ html {
   width: 20vh;
   min-width: 200px;
   padding: 0.5em 1em 0.5em 2.5em;
-  margin: 5% 0;
+  margin: 3% 0;
 }
 
 .input-search::placeholder {
@@ -70,14 +78,23 @@ html {
   box-shadow: 0 4px 10px 0 rgba(68, 63, 63, 0.541);
 }
 
+.pokedex-box div {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.pokedex-box img {
+  align-self: center;
+}
+
 .pokedex-box h2 {
   text-transform: capitalize;
 }
 
 .pokedex-box img {
   cursor: pointer;
-  max-width: 90px;
-  z-index: 9;
+  max-width: 60px;
 }
 
 .pokedex-box:hover {
@@ -119,4 +136,7 @@ html {
   width: 31px;
   height: 31px;
   box-shadow: 0 4px 10px 0 rgba(68, 63, 63, 0.541);
+}
+.pokemon-type:active {
+  content: url("./assets/images/pokebola.png");
 }
