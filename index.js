@@ -23,13 +23,18 @@ const colours = [
 
 const container = document.querySelector(".container");
 const pokemonSearch = document.createElement("input");
+const typeList = document.createElement("ul");
+const pokemonsList = document.createElement("ul");
+
 pokemonSearch.type = "search";
 pokemonSearch.placeholder = "Search";
 pokemonSearch.className = "input-search";
-const pokemonsList = document.createElement("ul");
+typeList.className = "type-list";
 pokemonsList.className = "pokedex";
-container.append(pokemonSearch);
-container.append(pokemonsList);
+
+container.appendChild(pokemonSearch);
+container.appendChild(typeList);
+container.appendChild(pokemonsList);
 
 const pokemons = fetch("https://pokeapi.co/api/v2/pokemon/")
   .then((response) => response.json())
@@ -56,8 +61,41 @@ const setPokemonFilter = (pokemons) => {
   });
 };
 
+const filterTypes = (pokemons) => {
+  const pokeTypes = pokemons.map((pokemon) => pokemon.types).flat();
+  let pokemonType = [];
+  for (let index = 0; index < pokeTypes.length; index++) {
+    const element = pokeTypes[index];
+
+    if (!pokemonType.includes(element.type.name)) {
+      pokemonType.push(element.type.name);
+      const pokeType = document.createElement("li");
+      pokeType.className = "pokemon-type";
+      pokeType.id = element.type.name;
+      typeList.appendChild(pokeType);
+      pokeType.addEventListener("click", function (e) {
+        const filterByType = pokemons.filter((pokeType) => {
+          let pokeTypeElement = "";
+          for (const types of pokeType.types) {
+            pokeTypeElement = types.type;
+          }
+          return pokeTypeElement.name.includes(e.target.id);
+        });
+        showPokemonsList(filterByType);
+      });
+
+      for (const color of colours) {
+        pokeType.style.background = color[element.type.name];
+      }
+    }
+  }
+};
+
 showPokemonsList = (pokemons) => {
+  typeList.innerHTML = "";
   pokemonsList.innerHTML = "";
+  filterTypes(pokemons);
+
   pokemons.forEach((pokemon) => {
     const pokemonElement = document.createElement("li");
     pokemonElement.className = "pokedex-box";
@@ -75,8 +113,9 @@ showPokemonsList = (pokemons) => {
         ? (pokemonImage.src = pokemon.sprites.back_default)
         : (pokemonImage.src = pokemon.sprites.other.dream_world.front_default);
     };
+
+    pokemonTitle.textContent = pokemon.name;
     pokemonImage.addEventListener("click", imageToggle);
-    pokemonTitle.innerText = pokemon.name;
     pokemonsList.appendChild(pokemonElement);
     pokemonElement.appendChild(pokemonBox);
     pokemonBox.appendChild(pokemonTitle);
@@ -84,11 +123,14 @@ showPokemonsList = (pokemons) => {
 
     const pokemonBadgeList = document.createElement("ul");
     pokemonBadgeList.className = "pokemon-badge-list";
+
     for (const type of pokemon.types) {
       const pokemonBadge = document.createElement("li");
+      pokemonBadge.textContent = type.type.name;
+
       pokemonBox.appendChild(pokemonBadgeList);
       pokemonBadgeList.appendChild(pokemonBadge);
-      pokemonBadge.textContent = type.type.name;
+
       for (const color of colours) {
         pokemonBadge.style.background = color[type.type.name];
       }

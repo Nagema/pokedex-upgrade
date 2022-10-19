@@ -46,7 +46,7 @@ html {
   display: flex;
   margin: 0 7em;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .pokedex-box {
@@ -55,9 +55,8 @@ html {
   width: 20vh;
   min-width: 200px;
   min-height: 200px;
-  height: 25vh;
+  height: 20vh;
   margin: 10px;
-  line-height: 5.5vmax;
   color: white;
   font-weight: bold;
   text-align: center;
@@ -96,4 +95,22 @@ html {
   line-height: 1.5;
   font-size: 12px;
   padding: 5px;
+}
+
+.type-list {
+  display: flex;
+  justify-content: center;
+}
+
+.pokemon-type {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  cursor: pointer;
+}
+.pokemon-type:hover {
+  width: 31px;
+  height: 31px;
+  box-shadow: 0 4px 10px 0 rgba(68, 63, 63, 0.541);
 }
